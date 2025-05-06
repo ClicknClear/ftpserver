@@ -75,11 +75,12 @@ func (s *Server) GetSettings() (*serverlib.Settings, error) {
 		}
 	}
 
-	return &serverlib.Settings{
-		ListenAddr:               conf.ListenAddress,
-		PublicHost:               conf.PublicHost,
-		PassiveTransferPortRange: portRange,
-	}, nil
+	//De-reference struct to copy it
+	finalSettings := *s.config.Settings
+	finalSettings.ListenAddr = conf.ListenAddress
+	finalSettings.PublicHost = conf.PublicHost
+	finalSettings.PassiveTransferPortRange = portRange
+	return &finalSettings, nil
 }
 
 // ClientConnected is called to send the very first welcome message

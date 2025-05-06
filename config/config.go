@@ -10,6 +10,7 @@ import (
 
 	"github.com/clicknclear/ftpserver/config/confpar"
 	"github.com/clicknclear/ftpserver/fs"
+	serverlib "github.com/fclairamb/ftpserverlib"
 )
 
 // ErrUnknownUser is returned when the provided user cannot be identified through our authentication mechanism
@@ -21,6 +22,7 @@ type Config struct {
 	logger    log.Logger
 	Content   *confpar.Content
 	accessMap map[string]*confpar.Access
+	Settings  *serverlib.Settings
 }
 
 // NewConfig creates a new config instance
@@ -32,6 +34,7 @@ func NewConfig(fileName string, logger log.Logger) (*Config, error) {
 	config := &Config{
 		fileName:  fileName,
 		logger:    logger,
+		Settings:  &serverlib.Settings{},
 		accessMap: make(map[string]*confpar.Access),
 	}
 
