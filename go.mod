@@ -1,6 +1,6 @@
 module github.com/clicknclear/ftpserver
 
-go 1.19
+go 1.23.0
 
 require (
 	github.com/aws/aws-sdk-go v1.45.24
@@ -14,18 +14,17 @@ require (
 	github.com/pkg/sftp v1.13.6
 	github.com/spf13/afero v1.10.0
 	golang.org/x/crypto v0.14.0
-	golang.org/x/oauth2 v0.13.0
+	golang.org/x/oauth2 v0.27.0
 )
 
 require (
-	cloud.google.com/go/compute/metadata v0.2.3 // indirect
+	cloud.google.com/go/compute/metadata v0.3.0 // indirect
 	github.com/google/s2a-go v0.1.4 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230530153820-e85fd2cbaebc // indirect
 )
 
 require (
-	cloud.google.com/go/compute v1.20.1 // indirect
 	github.com/dropbox/dropbox-sdk-go-unofficial v5.6.0+incompatible // indirect
 	github.com/go-kit/log v0.2.1
 	github.com/go-logfmt/logfmt v0.5.1 // indirect
